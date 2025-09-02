@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta namn="viewport" content="width=device-width, initial-scale=1.0">
+<meta namn="description" content="en sida för att sälja gamla volvo delar">
+<meta namn="author" content="Waseem Jalbout">
+<title>Glappfri.nu - Beställning</title>
+<link rel="stylesheet" href="style.css">
+
+
+
+
+</head>
+
+<body>
+ <header>
+    <div class="container nav">
+      <div class="logo">GLAPPFRI.NU</div>
+      <nav>
+        <ul>
+          <li><a class="active" href="index.html">Hem</a></li>
+          <li><a href="reservdelar.html">Reservdelar</a></li>
+          <li><a href="omOss.html">Om oss</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+ </header>
+ 
+ <section class="container pagehead">
+  <h1>Beställning</h1>
+  <p>Fyll i dina uppgifter för att beställa de valda reservddelar</p>
+ </section>
+
+ <section class="container contact-card">
+
+  <form onsubmit="event.preventDefault(); alert('Din beställning har skickats!');">
+      <div>
+        <label for="produkt">Produkt</label>
+        <input type="text" id="produkt" name="produkt" required />
+      </div>
+      <div>
+        <label for="antal">Antal</label>
+        <input type="number" id="antal" name="antal" min="1" value="1" required />
+      </div>
+      <div>
+        <label for="namn">Namn</label>
+        <input type="text" id="namn" name="namn" required />
+      </div>
+      <div>
+        <label for="epost">E-post</label>
+        <input type="email" id="epost" name="epost" required />
+      </div>
+      <div>
+        <label for="telefon">Telefon</label>
+        <input type="tel" id="telefon" name="telefon" />
+      </div>
+      <button type="submit" class="btn">Skicka beställning</button>
+    </form>
+  </section>
+  
+ <footer>
+
+
+<div class="footer-container">
+  <p>© 2025 Glappfri.nu</p>
+    <p>Byggd av Waseem Jalbout</p>
+    <p>Kontakt: info@glappfri.nu</p>
+  </div>
+
+    
+</footer> 
+</body>
+</html>
+
+ 
