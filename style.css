@@ -282,11 +282,10 @@ input, textarea{
 
 
 .video-section video {
-  text-align: center;
+ 
   width: 100%;
-  max-width: 800px;
-  border-radius: var(--radius); 
-  box-shadow: var(--shadow);  
+  
+ 
 }
 
 
