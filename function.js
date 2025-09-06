@@ -1,3 +1,3 @@
 function showMassage(){
-  alert ("Hello, JavaScript!".)
+  alert ("Hello, JavaScript!")
   {
