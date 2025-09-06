@@ -4,7 +4,7 @@ function visaSlumpErbjudande() {
   const erbjudandeProdukt = produkter[slumpIndex];
 
   // Ändrar rubrik på sidan
-  const rubrik = document.querySelector('.pagehead h1');
+  const rubrik = document.querySelector('.p');
   rubrik.textContent = "Dagens erbjudande: " + erbjudandeProdukt + " 20% rabatt!";
   rubrik.style.color = "red";
 }
