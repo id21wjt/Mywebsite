@@ -286,8 +286,6 @@ input, textarea{
   position: center;
   width: 500px;              
   border-radius: var(--radius);
-  justify-content: center;
-  display: flex;
   box-shadow: var(--shadow);
 }
 
