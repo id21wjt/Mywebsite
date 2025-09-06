@@ -1,5 +1,5 @@
 function visaSlumpErbjudande() {
-  const produkter = ["Bromsbelägg", "Styrled", "Filter", "Däck"];
+  const produkter = ["Bromsbelägg", "Styrled"];
   const slumpIndex = Math.floor(Math.random() * produkter.length);
   const erbjudandeProdukt = produkter[slumpIndex];
 
