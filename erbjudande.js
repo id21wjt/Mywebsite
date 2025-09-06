@@ -5,7 +5,7 @@ function visaSlumpErbjudande() {
 
   document.getElementById("erbjudande-text").textContent =
   "Dagens erbjudande: " + erbjudandeProdukt + " 20% rabatt!";
-
+  erbjudande.style.color = "red";
 }
 
 
