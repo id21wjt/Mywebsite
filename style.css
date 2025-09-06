@@ -284,8 +284,8 @@ input, textarea{
 .video-sketion video {
   aspect-ratio: 1 / 1;   
   position: center;
-  max-width: 80%
-  width: 500px;              
+  hight: 400px;
+  width: 400px;              
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
