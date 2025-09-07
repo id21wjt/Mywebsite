@@ -1,4 +1,5 @@
-:root{
+
+#root{
   --blue:#2980B9;
   --blue-600:#206b99;
   --ink:#2C3E50;
@@ -6,7 +7,12 @@
   --shadow:0 10px 28px rgba(16,24,40,.08);
   --radius:14px;
   --container:1180px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
+
 
 
 body{
@@ -17,9 +23,10 @@ body{
   background:#f6f8fa;
   font-size:16px; 
    height: 100%;
-   display: flex;
-   flex-direction: column;
-   padding-bottom: 200px
+   width: 100%;
+   
+   
+   
 
 }
 
@@ -41,6 +48,7 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
+  padding: 20px;
 }
 
 .logo{
@@ -127,27 +135,30 @@ section {
 .icons{
   display: flex;
   justify-content: space-around;
-  margin: 40px 0;
+  margin: 40px auto;
   text-align: center;
+ padding: 25px 120px;
+ background-color: #f6f8fa;
+  gap: 30px;
   }
 
 #icon1 {
 
-  position: absolute;
+ 
   top: 550px;
   left: 0;
 }
 
 #icon2 {
-  position: absolute;
-  top: 550px;
+
+  top: 0;
   right: 0;
  
 }
 
 
 #icon3{
-  position: absolute;
+ 
   top: 550px;
   right: 40%;
 }
@@ -156,7 +167,7 @@ section {
   display: flex;
   align-items: center;
   gap: 30px;
-  background-color: #f0f0f0;
+  background-color: #2C3E50;
   padding: 25px 100px;     
   border-radius: 12px; 
   
@@ -304,22 +315,21 @@ input, textarea{
 
 
 
-footer{
+footer {
   background: var(--blue);
   color: white;
-  position:fixed;
-   left:0px;
-   bottom:0px;
-   height:80px;
-   width:100%;
-  }
+  height: 80px;
+  width: 100%;
+  margin-top: auto; /* 👈 trycker ner footern istället för fixed */
+}
 
-
-.footer-container{
+.footer-container {
   display: flex;
   flex-direction: row;
   text-align: center;
   padding: 0 20px;
   justify-content: space-between;
-  
+  align-items: center;
+  height: 100%;
 }
+
