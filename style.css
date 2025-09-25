@@ -1,120 +1,307 @@
+
 :root{
-
-#root{
---blue:#2980B9;
---blue-600:#206b99;
---ink:#2C3E50;
---card:#ffffff;
---shadow:0 10px 28px rgba(16,24,40,.08);
---radius:14px;
---container:1180px;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  --blue:#2980B9;
+  --blue-600:#206b99;
+  --ink:#2C3E50;
+  --card:#ffffff;
+  --shadow:0 10px 28px rgba(16,24,40,.08);
+  --radius:14px;
+  --container:1180px; /* Ändrat från 1180px → bredare på stora skärmar */
 }
-
 
 
 body{
-margin:0;
-font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;
-@@ -17,9 +23,10 @@
-background:#f6f8fa;
-font-size:16px; 
-height: 100%;
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial;
+  line-height:1.6; 
+  color:#2C3E50;
+  background:#f6f8fa;
+  font-size:16px; /* Lagt till → texten blir tydligare */
+   height: 100%;
    display: flex;
    flex-direction: column;
    padding-bottom: 200px
-   width: 100%;
-   
-   
-   
 
 }
 
-@@ -41,27 +48,28 @@
-display:flex;
-align-items:center;
-justify-content:space-between;
-  padding: 20px;
+.container{
+  width:min(var(--container), 92%);
+  margin-inline:auto;
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:40;
+  background:#fff;
+  box-shadow:0 2px 10px rgba(17,24,39,.06);
+}
+
+.nav{
+  height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 .logo{
-font-weight:800;
-color:var(--blue);
-letter-spacing:.3px;
+  font-weight:800;
+  color:var(--blue);
+  letter-spacing:.3px;
 }
 
 nav ul{
-display:flex;
-gap:22px;
-list-style:none;
-margin:0;
-padding:0;
+  display:flex;
+  gap:22px;
+  list-style:none;
+  margin:0;
+  padding:0;
 }
 
 nav a{
-font-weight:600;
-color:#2C3E50;
-padding:10px 12px;
-border-radius:10px;
-transition:all .25s ease;
+  font-weight:600;
+  color:#2C3E50;
+  padding:10px 12px;
+  border-radius:10px;
+  transition:all .25s ease;
 }
 
-@@ -127,27 +135,30 @@
-.icons{
-display: flex;
-justify-content: space-around;
-  margin: 40px 0;
-  margin: 40px auto;
-text-align: center;
- padding: 25px 120px;
- background-color: #f6f8fa;
-  gap: 30px;
+.active {
+ 
+       /* lite extra luft */
+  background-color: var(--blue); /* svag blå bakgrund (valfritt) */
+  color: white;   
+  border: 2px solid var(--blue);             
 }
+
+
+nav a:hover{
+  color:#fff;
+  background:var(--blue);
+}
+
+/* HUVUDSEKTIONER */
+section {
+  padding:60px 0;
+  flex: 1; /* Ökad padding → luftigare layout mellan sektioner */
+}
+
+
+.hero{
+  
+  position: relative;
+  text-align: center;
+   color: white;
+}
+
+
+
+.hero-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: 10% 80%;
+  display: block;
+}
+
+.hero-text{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-text h1 {
+
+  font-size: 2rem;
+  margin: 0 0 10px;
+}
+
+.hero-text p{
+
+  margin-bottom: 20px;
+}
+
+
+
+
+.icons{
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 0;
+  text-align: center;
+  }
 
 #icon1 {
 
   position: absolute;
- 
-top: 550px;
-left: 0;
+  top: 550px;
+  left: 0;
 }
 
 #icon2 {
   position: absolute;
   top: 550px;
-
-  top: 0;
-right: 0;
-
+  right: 0;
+ 
 }
 
 
 #icon3{
   position: absolute;
- 
-top: 550px;
-right: 40%;
+  top: 550px;
+  
+  right: 40%;
 }
-@@ -156,7 +167,7 @@
-display: flex;
-align-items: center;
-gap: 30px;
+
+.icon-box {
+  display: flex;
+  align-items: center;
+  gap: 30px;
   background-color: #f0f0f0;
-  background-color: #2C3E50;
-padding: 25px 100px;     
-border-radius: 12px; 
+  padding: 25px 100px;     
+  border-radius: 12px; 
+  
+}
 
-@@ -304,22 +315,21 @@
+.icon-text{
+  width: 40px;
+  margin: 0;
+  color: var(--blue);
+}
+
+
+.icon-img{
+  width: 70px;
+  margin: 20px;
+}
+
+
+.pagehead{
+  text-align:left;
+}
+
+.pagehead h1{
+  margin:0 0 20px; /* Mer luft under rubrik */
+  font-size:clamp(1.8rem,1.5rem + 1vw,3rem); /* Rubrik större på stora skärmar */
+}
+
+.pagehead p{
+  margin:0 0 30px; /* Mer luft under beskrivning */
+  color:#475569;
+  font-size:1.1rem; /* Lite större text → lättare att läsa */
+}
+
+/* TABELL */
+table{
+  width:100%; /* Tabell fyller hela container */
+  border-collapse:collapse;
+  margin-bottom:40px; /* Luft under tabellen */
+}
+
+th, td{
+  padding:16px; /* Ökat från 12px → mer luft mellan celler */
+  text-align:left;
+  border-bottom:1px solid #e2e8f0; /* Lagt till → snyggare separation */
+}
 
 
 
+.product-img {
+    height: 50px;   /* justera efter behov */
+    width: auto;    /* behåller proportioner */
+    display: block;
+    margin: 0 auto; /* centrerar bilden i cellen */
+}
+
+.product-img:hover {
+    transform: scale(2);  /* dubbla storleken vid hover */
+    z-index: 10;          /* ser till att bilden hamnar ovanför andra element */
+}
+
+
+/* Kontaktkort */
+.contact-card{
+  background:var(--card);
+  padding:28px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  margin-top:40px; /* Mer luft ovanför */
+}
+
+/* Formulär */
+form{
+  display:grid;
+  gap:18px;
+}
+
+label{
+  font-weight:600;
+  color:#334155;
+  font-size:.95rem;
+}
+
+input, textarea{
+  padding:12px 14px;
+  border:1px solid #d0d7de;
+  border-radius:20px;
+  font:inherit;
+  width:100%;
+ 
+}
+
+.big{
+
+  padding:12px 14px;
+  border:1px solid #d0d7de;
+  border-radius:20px;
+  font:inherit;
+  width:100%;
+  height:200px;
+ }
+
+
+
+/* Knappar */
+.btn{
+  padding:12px 16px;
+  border-radius:10px;
+  border:0;
+  background:var(--blue);
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(41,128,185,.25);
+}
+
+.btn:hover{
+  background:var(--blue-600);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
 footer{
-footer {
-background: var(--blue);
-color: white;
+  background: var(--blue);
+  color: white;
   position:fixed;
    left:0px;
    bottom:0px;
@@ -122,19 +309,13 @@ color: white;
    width:100%;
   }
 
-  height: 80px;
-  width: 100%;
-  margin-top: auto; /* 👈 trycker ner footern istället för fixed */
-}
 
 .footer-container{
-.footer-container {
-display: flex;
-flex-direction: row;
-text-align: center;
-padding: 0 20px;
-justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  padding: 0 20px;
+  justify-content: space-between;
   
-  align-items: center;
-  height: 100%;
 }
+kan du förklara varje kod/rad så jag kan förklara för mina lärare vad den handlar om
