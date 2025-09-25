@@ -1,19 +1,13 @@
 
-
-#root{
+:root{
   --blue:#2980B9;
   --blue-600:#206b99;
   --ink:#2C3E50;
   --card:#ffffff;
   --shadow:0 10px 28px rgba(16,24,40,.08);
   --radius:14px;
-  --container:1180px;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  --container:1180px; /* Ändrat från 1180px → bredare på stora skärmar */
 }
-
 
 
 body{
@@ -22,12 +16,11 @@ body{
   line-height:1.6; 
   color:#2C3E50;
   background:#f6f8fa;
-  font-size:16px; 
+  font-size:16px; /* Lagt till → texten blir tydligare */
    height: 100%;
-   width: 100%;
-   
-   
-   
+   display: flex;
+   flex-direction: column;
+   padding-bottom: 200px
 
 }
 
@@ -49,7 +42,6 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding: 20px;
 }
 
 .logo{
@@ -76,8 +68,8 @@ nav a{
 
 .active {
  
-      
-  background-color: var(--blue); 
+       /* lite extra luft */
+  background-color: var(--blue); /* svag blå bakgrund (valfritt) */
   color: white;   
   border: 2px solid var(--blue);             
 }
@@ -88,10 +80,10 @@ nav a:hover{
   background:var(--blue);
 }
 
-
+/* HUVUDSEKTIONER */
 section {
   padding:60px 0;
-  flex: 1; 
+  flex: 1; /* Ökad padding → luftigare layout mellan sektioner */
 }
 
 
@@ -136,31 +128,29 @@ section {
 .icons{
   display: flex;
   justify-content: space-around;
-  margin: 40px auto;
+  margin: 40px 0;
   text-align: center;
- padding: 25px 120px;
- background-color: #f6f8fa;
-  gap: 30px;
   }
 
 #icon1 {
 
- 
+  position: absolute;
   top: 550px;
   left: 0;
 }
 
 #icon2 {
-
-  top: 0;
+  position: absolute;
+  top: 550px;
   right: 0;
  
 }
 
 
 #icon3{
- 
+  position: absolute;
   top: 550px;
+  
   right: 40%;
 }
 
@@ -168,7 +158,7 @@ section {
   display: flex;
   align-items: center;
   gap: 30px;
-  background-color: #2C3E50;
+  background-color: #f0f0f0;
   padding: 25px 100px;     
   border-radius: 12px; 
   
@@ -192,54 +182,54 @@ section {
 }
 
 .pagehead h1{
-  margin:0 0 20px; 
-  font-size:clamp(1.8rem,1.5rem + 1vw,3rem); 
+  margin:0 0 20px; /* Mer luft under rubrik */
+  font-size:clamp(1.8rem,1.5rem + 1vw,3rem); /* Rubrik större på stora skärmar */
 }
 
 .pagehead p{
-  margin:0 0 30px; 
+  margin:0 0 30px; /* Mer luft under beskrivning */
   color:#475569;
-  font-size:1.1rem; 
+  font-size:1.1rem; /* Lite större text → lättare att läsa */
 }
 
-
+/* TABELL */
 table{
-  width:100%; 
+  width:100%; /* Tabell fyller hela container */
   border-collapse:collapse;
-  margin-bottom:40px; 
+  margin-bottom:40px; /* Luft under tabellen */
 }
 
 th, td{
-  padding:16px; 
+  padding:16px; /* Ökat från 12px → mer luft mellan celler */
   text-align:left;
-  border-bottom:1px solid #e2e8f0;
+  border-bottom:1px solid #e2e8f0; /* Lagt till → snyggare separation */
 }
 
 
 
 .product-img {
-    height: 50px;   
-    width: auto;    
+    height: 50px;   /* justera efter behov */
+    width: auto;    /* behåller proportioner */
     display: block;
-    margin: 0 auto; 
+    margin: 0 auto; /* centrerar bilden i cellen */
 }
 
 .product-img:hover {
-    transform: scale(2);  
-    z-index: 10;          
+    transform: scale(2);  /* dubbla storleken vid hover */
+    z-index: 10;          /* ser till att bilden hamnar ovanför andra element */
 }
 
 
-
+/* Kontaktkort */
 .contact-card{
   background:var(--card);
   padding:28px;
   border-radius:var(--radius);
   box-shadow:var(--shadow);
-  margin-top:40px; 
+  margin-top:40px; /* Mer luft ovanför */
 }
 
-
+/* Formulär */
 form{
   display:grid;
   gap:18px;
@@ -272,7 +262,7 @@ input, textarea{
 
 
 
-
+/* Knappar */
 .btn{
   padding:12px 16px;
   border-radius:10px;
@@ -292,14 +282,6 @@ input, textarea{
 
 
 
-.video-sketion video {
-  aspect-ratio: 1 / 1;   
-  position: center;
-  hight: 300px;
-  width: 300px;              
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
 
 
 
@@ -316,20 +298,24 @@ input, textarea{
 
 
 
-footer {
+/* Footer */
+footer{
   background: var(--blue);
   color: white;
-  height: 80px;
-  width: 100%;
-  margin-top: auto; /* 👈 trycker ner footern istället för fixed */
-}
+  position:fixed;
+   left:0px;
+   bottom:0px;
+   height:80px;
+   width:100%;
+  }
 
-.footer-container {
+
+.footer-container{
   display: flex;
   flex-direction: row;
   text-align: center;
   padding: 0 20px;
   justify-content: space-between;
-  align-items: center;
-  height: 100%;
+  
 }
+kan du förklara varje kod/rad så jag kan förklara för mina lärare vad den handlar om
